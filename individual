@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+if __name__ == "__main__":
+    # Определим универсальное множество
+    u = set("abcdefghijklmnopqrstuvwxyz")
+
+    a = {"b", "k", "n", "o", "q"}
+    b = {"a", "b", "k", "i"}
+    c = {"o", "p"}
+    d = {"a", "m", "n", "y", "z"}
+
+    # а является подмножеством множества b и это все пересекается с d
+    x = (a.union(b)).intersection(d)
+    print(f"x = {x}")
+
+    # Найдем дополнения множеств
+    an = u.difference(a)
+
+    # (Дополнение множества а пересекается с множеством d) это является подмножеством, где с/b (дополнение множества с)
+    y = (an.intersection(d)).union(c.difference(b))
+    print(f"y = {y}")
